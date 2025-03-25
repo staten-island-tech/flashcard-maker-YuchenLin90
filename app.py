@@ -15,20 +15,43 @@
 # points for “Streaks.
 
 import json 
-try:
-    with open("flash_cards.json") as file:
-        flashcards = json.load(file)
-except FileNotFoundError:
-    flashcards = []
+# from PIL import Image
+# def cards():
+#     try:
+#         with open("flash_cards.json", "r") as file:
+#             return json.load(file)
+#     except FileNotFoundError:
+#         return []
+# flashcards = cards()
+# class flash_cards:
+#     def __init__(self, question, answer, image_path=None):
+#         self.question = question
+#         self.answer = answer
+#         self.image_path = image_path
 
-class flash_cards:
-    def __init__(self, question, answer):
-        self.question = question
-        self.answer = answer
-
-    def display_info(self):
-        return f"{self.question}    {self.answer}"
+#     def display_info(self):
+#         return f"{self.question}    {self.answer}"
         
+    # def show_image(self):
+    #     if self.image_path:
+    #         try:
+    #             img = Image.open(self.image_path)
+    #             img.show()
+    #         except FileNotFoundError:
+    #             print("Error: Image file not found.")
+
+# Flash_cards = [
+#    Card("What is the atomic number of carbon?","6")
+#    Card("What is the pH of neutral water?", "7")
+#    Card("What gas do plants absorb during photosynthesis?", "CO2")
+#    Card("What is the main component of natural gas?", "Methane")
+#    ]
+# cards_data = [card.to_dict() for card in cards]
+# with open("cards.json", "w") as file:
+#     json.dump(cards_data, file, indent=4)
+
+# new_card = Card("What is the chemical symbol for water?", "H2O")
+
 
 
 
@@ -58,3 +81,48 @@ class flash_cards:
 # Alvin.sell("Organs")
 
 
+# [
+#    
+#     {"Question" :"What is the atomic number of carbon?",
+#     "Answer" :"6"},
+#     {"Question" :"What is the pH of neutral water?",
+#     "Answer" :"7"},
+#     {"Question" :"What gas do plants absorb during photosynthesis?",
+#     "Answer" :"CO2"},
+#     {"Question" :"What is the main component of natural gas?",
+#     "Answer" :"Methane"},
+#     {"Question" :"What element has the symbol 'Na'?",
+#     "Answer" :"Sodium"}
+# ]
+
+
+
+class flash_cards:
+    def __init__(self, question, answer, image_path=None):
+        self.question = question
+        self.answer = answer
+        self.image_path = image_path
+
+    def display_info(self):
+        return f"{self.question}    {self.answer}"
+Flash_cards = [
+   Card("What is the atomic number of carbon?","6")
+   Card("What is the pH of neutral water?", "7")
+   Card("What gas do plants absorb during photosynthesis?", "CO2")
+   Card("What is the main component of natural gas?", "Methane")
+   ]
+cards_data = [card.to_dict() for card in cards]
+with open("cards.json", "w") as file:
+    json.dump(cards_data, file, indent=4)
+
+new_card = Card("What is the chemical symbol for water?", "H2O")
+
+try:
+    with open("flash_cards.json", "r") as file:
+        cards_data = json.load(file)
+except FileNotFoundError:
+    cards_data = []
+
+cards_data.append(new_card.to_dict())
+with open("flash_cards.json", "w") as file:
+    json.dump(cards_data, file, indent=4)
