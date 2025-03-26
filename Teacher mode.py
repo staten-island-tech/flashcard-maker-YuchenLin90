@@ -95,6 +95,7 @@
 #     "Answer" :"Sodium"}
 # ]
 
+#Teacher Mode
 import json
 
 class Flashcards:
@@ -119,7 +120,7 @@ flash_cards = [
    Flashcards("What is the main component of natural gas?", "Methane")
    ]
 cards_data = [card.to_dict() for card in flash_cards]
-with open("cards.json", "w") as file:
+with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
 new_card = Flashcards("What is the chemical symbol for water?", "H2O")
@@ -128,6 +129,7 @@ try:
     with open("flash_cards.json", "r") as file:
         cards_data = json.load(file)
 except FileNotFoundError:
+    
     cards_data = []
 cards_data.append(new_card.to_dict())
 
@@ -135,3 +137,8 @@ with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
 print("It's been added to json.")
+
+
+
+
+
