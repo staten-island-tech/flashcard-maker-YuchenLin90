@@ -14,7 +14,7 @@
 # Keep a tally of correct answers and provide a score. Give students bonus
 # points for “Streaks.
 
-import json 
+# import json 
 # from PIL import Image
 # def cards():
 #     try:
@@ -95,9 +95,9 @@ import json
 #     "Answer" :"Sodium"}
 # ]
 
+import json
 
-
-class flash_cards:
+class Flashcards:
     def __init__(self, question, answer, image_path=None):
         self.question = question
         self.answer = answer
@@ -105,24 +105,33 @@ class flash_cards:
 
     def display_info(self):
         return f"{self.question}    {self.answer}"
-Flash_cards = [
-   Card("What is the atomic number of carbon?","6")
-   Card("What is the pH of neutral water?", "7")
-   Card("What gas do plants absorb during photosynthesis?", "CO2")
-   Card("What is the main component of natural gas?", "Methane")
+    
+    def to_dict(self):
+        return{
+            "question": self.question,
+            "answer": self.answer,
+            "image_path": self.image_path
+        }
+flash_cards = [
+   Flashcards("What is the atomic number of carbon?","6"),
+   Flashcards("What is the pH of neutral water?", "7"),
+   Flashcards("What gas do plants absorb during photosynthesis?", "CO2"),
+   Flashcards("What is the main component of natural gas?", "Methane")
    ]
-cards_data = [card.to_dict() for card in cards]
+cards_data = [card.to_dict() for card in flash_cards]
 with open("cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
-new_card = Card("What is the chemical symbol for water?", "H2O")
+new_card = Flashcards("What is the chemical symbol for water?", "H2O")
 
 try:
     with open("flash_cards.json", "r") as file:
         cards_data = json.load(file)
 except FileNotFoundError:
     cards_data = []
-
 cards_data.append(new_card.to_dict())
+
 with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
+
+print("It's been added to json.")
