@@ -1,17 +1,17 @@
 [
     {
         "question": "What is the atomic number of carbon?",
-        "answer": "6",
+        "answer": "six",
         "image_path": null
     },
     {
         "question": "What is the pH of neutral water?",
-        "answer": "7",
+        "answer": "seven",
         "image_path": null
     },
     {
         "question": "What gas do plants absorb during photosynthesis?",
-        "answer": "CO2",
+        "answer": "cotwo",
         "image_path": null
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "question": "What is the chemical symbol for water?",
-        "answer": "H2O",
+        "answer": "htwoo",
         "image_path": null
     }
 ]

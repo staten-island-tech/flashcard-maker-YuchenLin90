@@ -97,7 +97,7 @@
 
 #Teacher Mode
 import json
-
+print("Add questions and answers in the new_card section to be upload to json.")
 class Flashcards:
     def __init__(self, question, answer, image_path=None):
         self.question = question
@@ -114,16 +114,16 @@ class Flashcards:
             "image_path": self.image_path
         }
 flash_cards = [
-   Flashcards("What is the atomic number of carbon?","6"),
-   Flashcards("What is the pH of neutral water?", "7"),
-   Flashcards("What gas do plants absorb during photosynthesis?", "CO2"),
+   Flashcards("What is the atomic number of carbon?","six"),
+   Flashcards("What is the pH of neutral water?", "seven"),
+   Flashcards("What gas do plants absorb during photosynthesis?", "cotwo"),
    Flashcards("What is the main component of natural gas?", "Methane")
    ]
 cards_data = [card.to_dict() for card in flash_cards]
 with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
-new_card = Flashcards("What is the chemical symbol for water?", "H2O")
+new_card = Flashcards("What is the chemical symbol for water?", "htwoo")
 
 try:
     with open("flash_cards.json", "r") as file:
@@ -137,8 +137,4 @@ with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
 print("It's been added to json.")
-
-
-
-
 
