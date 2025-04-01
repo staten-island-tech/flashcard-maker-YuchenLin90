@@ -116,14 +116,14 @@ class Flashcards:
 flash_cards = [
    Flashcards("What is the atomic number of carbon?","six"),
    Flashcards("What is the pH of neutral water?", "seven"),
-   Flashcards("What gas do plants absorb during photosynthesis?", "cotwo"),
+   Flashcards("What gas do plants absorb during photosynthesis?", "co2"),
    Flashcards("What is the main component of natural gas?", "Methane")
    ]
 cards_data = [card.to_dict() for card in flash_cards]
 with open("flash_cards.json", "w") as file:
     json.dump(cards_data, file, indent=4)
 
-new_card = Flashcards("What is the chemical symbol for water?", "htwoo")
+new_card = Flashcards("What is the chemical symbol for water?", "h2o")
 
 try:
     with open("flash_cards.json", "r") as file:
