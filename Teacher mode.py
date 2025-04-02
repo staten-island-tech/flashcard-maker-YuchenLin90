@@ -97,6 +97,7 @@
 
 #Teacher Mode
 import json
+from PIL import Image
 print("Add questions and answers in the new_card section to be upload to json.")
 class Flashcards:
     def __init__(self, question, answer, image_path=None):
@@ -113,9 +114,20 @@ class Flashcards:
             "answer": self.answer,
             "image_path": self.image_path
         }
+    def show_image(self):
+        if self.image_path:
+            try:
+                img = Image.open(self.image_path)
+                img.show()
+            except FileNotFoundError:
+                print("Error:Image file not found.")
+        else:
+            print("No image provided.")
+    
+
 flash_cards = [
-   Flashcards("What is the atomic number of carbon?","six"),
-   Flashcards("What is the pH of neutral water?", "seven"),
+   Flashcards("What is the atomic number of carbon?","6"),
+   Flashcards("What is the pH of neutral water?", "7"),
    Flashcards("What gas do plants absorb during photosynthesis?", "co2"),
    Flashcards("What is the main component of natural gas?", "Methane")
    ]
