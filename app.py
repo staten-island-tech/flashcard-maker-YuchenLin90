@@ -1,19 +1,18 @@
-A = []
+
 R = 5
 N = 1
 P = 750
-D = -1
-
+D = 0
+total = 0
 while True:
     N = N * R
-    A.append(N)
+    total = total + N
     D =D +1 
-    for i in A:
-        + i
-    # print(f"{A}")
-    if i > P:
+
+
+    if total > P:
         break
-print(f"The number of people being infected is {A} in day {D}")
+print(f"day {D}")
         
 
         
