@@ -4,8 +4,10 @@
 # Keep a tally of correct answers and provide a score. Give students bonus
 # points for “Streaks.
 import json
-flashcard = open("./flash_cards.json", encoding="utf8")
-data = json.load(flashcard)
+from PIL import Image
+
+with open("./flash_cards.json", encoding="utf8") as flashcard:
+    data = json.load(flashcard)
 
 streak = 0
 bonus_point = 0
@@ -15,6 +17,14 @@ x = input("Do you want to take a small quiz for chemistry?")
 if x.lower() == "yes":
     for properties in data:
         print(f"question:{properties['question']}")
+        
+        image_path = properties.get("image_path")  
+        if image_path:
+            try:
+                img = Image.open(image_path)
+                img.show()
+            except FileNotFoundError:
+                print(f"Image not found: {image_path}")
         y = input("Answer:")
 
         if y.lower()== properties['answer'].lower():

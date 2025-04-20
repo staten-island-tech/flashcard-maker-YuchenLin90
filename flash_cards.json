@@ -2,26 +2,26 @@
     {
         "question": "What is the atomic number of carbon?",
         "answer": "6",
-        "image_path": null
+        "image_path": "carbon.png"
     },
     {
         "question": "What is the pH of neutral water?",
         "answer": "7",
-        "image_path": null
+        "image_path": "water.png"
     },
     {
         "question": "What gas do plants absorb during photosynthesis?",
         "answer": "co2",
-        "image_path": null
+        "image_path": "3.png"
     },
     {
         "question": "What is the main component of natural gas?",
         "answer": "Methane",
-        "image_path": null
+        "image_path": "4.png"
     },
     {
         "question": "What is the chemical symbol for water?",
         "answer": "h2o",
-        "image_path": null
+        "image_path": "5.png"
     }
 ]
