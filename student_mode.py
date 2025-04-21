@@ -18,7 +18,8 @@ if x.lower() == "yes":
     for properties in data:
         print(f"question:{properties['question']}")
         
-        image_path = properties.get("image_path")  
+        image_path = properties.get("image_path") 
+         
         if image_path:
             try:
                 img = Image.open(image_path)
