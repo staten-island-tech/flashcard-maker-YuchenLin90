@@ -1,0 +1,14 @@
+body {
+    background-color: aqua;
+  }
+  .header {
+    font-size: 80px;
+  }
+  img {
+    width: 200px;
+  }
+  .container {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+  }
